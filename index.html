@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christina's Portfolio - welcome (ˆ ◡ ˆ)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Quicksand:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --cream: #fef9f3;
+            --light-blue: #d4e9f7;
+            --light-pink: #f5e3f0;
+            --pale-pink: #fde8f0;
+            --accent-pink: #f5b3d4;
+            --accent-purple: #8b5a7a;
+            --text-dark: #2d2d2d;
+            --light-gray: #f0f0f0;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(135deg, #fef9f3 0%, #f5e3f0 50%, #d4e9f7 100%);
+            color: var(--text-dark);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        .header {
+            position: relative;
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        .welcome-bar {
+            display: inline-block;
+            background: var(--light-blue);
+            padding: 12px 30px;
+            border-radius: 30px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            animation: slideDown 0.8s ease-out;
+        }
+
+        .flower-decoration {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 40px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateX(-50%) translateY(0px); }
+            50% { transform: translateX(-50%) translateY(-10px); }
+        }
+
+        /* Main Grid */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+            margin-bottom: 60px;
+        }
+
+        .left-section {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+        }
+
+        /* Folder Icons */
+        .folder-section {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 20px;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .folder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .folder:hover {
+            transform: translateY(-5px);
+        }
+
+        .folder-icon {
+            width: 160px;
+            height: 140px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0;
+            font-size: 60px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            box-shadow: none;
+            border: none;
+            transition: transform 0.3s ease;
+            position: relative;
+            overflow: visible;
+        }
+
+        .folder:hover .folder-icon {
+            box-shadow: none;
+            transform: scale(1.05);
+        }
+
+        .folder-pink {
+            background-image: url('cat-pink.png');
+        }
+
+        .folder-blue {
+            background-image: url('cat-blue.png');
+        }
+
+        .folder-label {
+            font-size: 16px;
+            font-weight: 600;
+            text-align: center;
+            letter-spacing: 0.3px;
+            font-family: 'Fredoka', sans-serif;
+        }
+
+        /* Education & Skills */
+        .info-section {
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+
+        .info-block {
+            margin-bottom: 25px;
+        }
+
+        .info-title {
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 700;
+            font-size: 14px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-purple);
+        }
+
+        .info-content {
+            font-size: 13px;
+            line-height: 1.8;
+            color: var(--text-dark);
+        }
+
+        .resume-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            font-family: 'Fredoka', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--accent-purple);
+            background: rgba(255, 255, 255, 0.7);
+            border: 2px solid rgba(245, 179, 212, 0.5);
+            padding: 9px 20px;
+            border-radius: 25px;
+            backdrop-filter: blur(6px);
+            transition: all 0.25s ease;
+            margin-top: 8px;
+        }
+
+        .resume-link:hover {
+            background: rgba(255, 255, 255, 0.95);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(180, 140, 170, 0.2);
+        }
+        .right-section {
+            animation: fadeInUp 0.8s ease-out 0.3s both;
+        }
+
+        .about-card {
+            background: var(--light-blue);
+            border-radius: 20px;
+            padding: 40px 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            border: 3px solid rgba(255, 255, 255, 0.7);
+            background-image: radial-gradient(circle, #a8d4e8 15%, transparent 15%);
+            background-size: 20px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-card::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+
+        .about-title {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .cat-mascot {
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        .cat-mascot img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .about-text {
+            font-size: 14px;
+            line-height: 1.8;
+            text-align: center;
+            color: var(--text-dark);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .folder-section {
+                justify-content: center;
+            }
+
+            .welcome-bar {
+                font-size: 12px;
+                padding: 10px 20px;
+            }
+
+            .folder {
+                gap: 10px;
+            }
+
+            .folder-icon {
+                width: 100px;
+                height: 85px;
+                font-size: 50px;
+            }
+
+            .about-card {
+                padding: 30px 20px;
+            }
+
+            .cat-mascot {
+                width: 120px;
+                height: 120px;
+                font-size: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="welcome-bar">welcome (ˆ ◡ ˆ)</div>
+        </div>
+
+        <div class="main-grid">
+            <!-- Left Section -->
+            <div class="left-section">
+                <!-- Folder Icons -->
+                <div class="folder-section">
+                    <a href="experience.html" class="folder">
+                        <div class="folder-icon folder-pink">
+                        </div>
+                        <div class="folder-label">experience</div>
+                    </a>
+                    <a href="projects.html" class="folder">
+                        <div class="folder-icon folder-blue">
+                        </div>
+                        <div class="folder-label">my projects</div>
+                    </a>
+                </div>
+
+                <!-- Education & Skills -->
+                <div class="info-section">
+                    <div class="info-block">
+                        <div class="info-title">education:</div>
+                        <div class="info-content">BS in Informatics at University of Washington</div>
+                    </div>
+
+                    <div class="info-block">
+                        <div class="info-title">skills:</div>
+                        <div class="info-content">
+                            coding languages – Java, Python, HTML, CSS, Javascript, and R<br>
+                            tools – Figma
+                        </div>
+                    </div>
+
+                    <a href="resume.pdf" target="_blank" class="resume-link">
+                        📄 view my resume
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Section -->
+            <div class="right-section">
+                <div class="about-card">
+                    <div class="about-title">about me!</div>
+                    <div class="cat-mascot"><img src="squirrel.png" alt="squirrel mascot" /></div>
+                    <div class="about-text">
+                        hello! i'm christina and i'm an aspiring developer majoring in informatics :)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

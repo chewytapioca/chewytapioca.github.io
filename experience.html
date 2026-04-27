@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>experience ✿</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Quicksand:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --cream: #fef9f3;
+            --light-blue: #d4e9f7;
+            --light-pink: #f5e3f0;
+            --soft-pink: #f0c8e0;
+            --accent-purple: #8b5a7a;
+            --accent-blue: #5a7a9a;
+            --text-dark: #2d2d2d;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(135deg, #fef9f3 0%, #f5e3f0 50%, #d4e9f7 100%);
+            color: var(--text-dark);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 860px;
+            margin: 0 auto;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: var(--accent-purple);
+            font-family: 'Fredoka', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 30px;
+            padding: 8px 18px;
+            background: rgba(255,255,255,0.6);
+            border-radius: 20px;
+            border: 2px solid rgba(245, 179, 212, 0.4);
+            transition: all 0.25s ease;
+            backdrop-filter: blur(6px);
+        }
+
+        .back-btn:hover {
+            background: rgba(255,255,255,0.9);
+            transform: translateX(-4px);
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 50px;
+            animation: slideDown 0.7s ease-out;
+        }
+
+        .sakura-row {
+            font-size: 24px;
+            letter-spacing: 6px;
+            margin-bottom: 12px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .page-title {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--accent-purple);
+            margin-bottom: 6px;
+        }
+
+        .page-subtitle {
+            font-size: 13px;
+            color: #aaa;
+            letter-spacing: 0.5px;
+        }
+
+        .experience-list {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        .exp-card {
+            background: rgba(255, 255, 255, 0.75);
+            border-radius: 22px;
+            padding: 30px 32px;
+            border: 2px solid rgba(255, 255, 255, 0.9);
+            box-shadow: 0 6px 30px rgba(180, 140, 170, 0.12);
+            backdrop-filter: blur(8px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeInUp 0.6s ease-out 0.1s both;
+        }
+
+        .exp-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 14px 40px rgba(180, 140, 170, 0.2);
+        }
+
+        .card-top {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 18px;
+        }
+
+        .card-emoji {
+            font-size: 32px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .card-meta { flex: 1; }
+
+        .exp-title {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--accent-purple);
+            margin-bottom: 4px;
+        }
+
+        .exp-company {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--accent-blue);
+            margin-bottom: 4px;
+        }
+
+        .exp-period {
+            font-size: 11px;
+            color: #bbb;
+            font-weight: 600;
+        }
+
+        .project-tag {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 3px 12px;
+            border-radius: 20px;
+            letter-spacing: 0.5px;
+            margin-right: 6px;
+            margin-bottom: 5px;
+        }
+
+        .tag-blue { background: var(--light-blue); color: var(--accent-blue); }
+        .tag-pink { background: var(--light-pink); color: var(--accent-purple); }
+
+        .card-divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(200,180,210,0.3), transparent);
+            margin: 16px 0;
+        }
+
+        .bullet-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .bullet-list li {
+            font-size: 13px;
+            line-height: 1.7;
+            color: #444;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .bullet-list li::before {
+            content: '✿';
+            position: absolute;
+            left: 0;
+            color: var(--soft-pink);
+            font-size: 11px;
+            top: 3px;
+        }
+
+        .footer-flourish {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 20px;
+            letter-spacing: 8px;
+            opacity: 0.5;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(25px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+
+        @media (max-width: 600px) {
+            .page-title { font-size: 28px; }
+            .exp-card { padding: 22px 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <a href="index.html" class="back-btn">← back home</a>
+
+        <div class="page-header">
+            <div class="sakura-row">🌸 🌷 🌸</div>
+            <div class="page-title">experience ✿</div>
+            <div class="page-subtitle">where i've worked & what i've learned</div>
+        </div>
+
+        <div class="experience-list">
+
+            <div class="exp-card">
+                <div class="card-top">
+                    <div class="card-emoji">💻</div>
+                    <div class="card-meta">
+                        <div class="exp-title">Web Development Intern</div>
+                        <div class="exp-company">Artisans Books & Coffee</div>
+                        <div>
+                            <span class="project-tag tag-pink">Internship</span>
+                            <span class="project-tag tag-blue">Web Dev</span>
+                        </div>
+                        <div class="exp-period">Summer 2024</div>
+                    </div>
+                </div>
+                <div class="card-divider"></div>
+                <ul class="bullet-list">
+                    <li>Redesigned and modernized a small business website, contributing 50+ hours to improve layout, navigation, and usability.</li>
+                    <li>Applied HTML, CSS, and JavaScript to implement modular, responsive front-end features.</li>
+                    <li>Collaborated with 2+ business owners to translate real-world requirements into technical solutions.</li>
+                    <li>Balanced technical development with customer-facing responsibilities, strengthening communication and problem-solving skills.</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="footer-flourish">🌸 ✿ 🌸</div>
+
+    </div>
+</body>
+</html>
